@@ -80,8 +80,15 @@ choices.forEach(choice => {
     const selectedChoice = e.target;
     console.log('see', selectedChoice);
     const selectedAnswer = selectedChoice.dataset['number'];
-    console.log(selectedAnswer);
-    getNewQuestion();
+    console.log(selectedAnswer, currentQuestion.answer);
+
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+    selectedChoice.parentElement.classList.add(classToApply);
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
 
   })
 })
