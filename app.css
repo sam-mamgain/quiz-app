@@ -38,7 +38,7 @@ h3 {
 
 /* Utilities */
 .container {
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   border: 1px solid red;
   display: flex;
